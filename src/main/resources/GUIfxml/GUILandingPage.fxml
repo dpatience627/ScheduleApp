@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amaze-All Course Scheduler" textAlignment="CENTER" wrappingWidth="1000.0" y="100.0">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font></Text>
+      <Button layoutX="384.0" layoutY="188.0" mnemonicParsing="false" onAction="#createNew" text="Create New Career">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="loadButton" layoutX="385.0" layoutY="502.0" mnemonicParsing="false" onAction="#loadCareer" text="Load This Career">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Text layoutX="384.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Or select a career to load:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text><Button fx:id="restoreButton" layoutX="28.0" layoutY="509.0" mnemonicParsing="false" onAction="#restoreCoursesAction" text="Restore Selected" />
+      <Text layoutX="28.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule Lost?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ListView fx:id="loadableView" layoutX="384.0" layoutY="285.0" prefHeight="200.0" prefWidth="231.0" />
+      <Button fx:id="deleteButton" layoutX="863.0" layoutY="509.0" mnemonicParsing="false" onAction="#deleteCareer" text="Delete Selected" textFill="RED" />
+      <Text fx:id="undoDeleteText" layoutX="788.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Close the program now to undo." visible="false" />
+      <Text fx:id="doneRestoreText" layoutX="28.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Done!" visible="false" />
+   </children>
+</AnchorPane>

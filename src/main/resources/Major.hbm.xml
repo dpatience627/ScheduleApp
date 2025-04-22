@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="edu.gcc.comp350.amazeall.Major" table="majors_table">
+        <id name = "majorId" type = "string" access="field" column = "Major_ID" >
+            <generator class="native"/>
+        </id>
+        <property name = "majorName" column = "MajorName" access="field" type = "string"/>
+        <property name = "majorReq" column = "RequiredCourses" access="field" type = "string"/>
+        <property name = "optionalCourses" column = "OptionalCourses" access="field" type = "string"/>
+        <property name = "majorType" column = "MajorType" access="field" type = "string"/>
+
+    </class>
+</hibernate-mapping>

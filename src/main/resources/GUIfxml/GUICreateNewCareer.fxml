@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="256.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create a new college career: A set of semesters representing your years at GCC.">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text layoutX="256.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name of Career:" />
+      <Text layoutX="256.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Semesters:" />
+      <TextField fx:id="nameField" layoutX="426.0" layoutY="153.0" promptText="Name" />
+      <TextField fx:id="numberField" layoutX="426.0" layoutY="185.0" promptText="Number" />
+      <Text fx:id="errorText" fill="RED" layoutX="259.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Errors go here">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Button layoutX="256.0" layoutY="488.0" mnemonicParsing="false" onAction="#attemptToCreate" text="Create (May take a while)" />
+      <Button layoutX="30.0" layoutY="25.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <HBox layoutX="256.0" layoutY="246.0" prefHeight="128.0" prefWidth="333.0">
+         <children>
+            <VBox prefHeight="128.0" prefWidth="140.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      Majors:" />
+                  <CheckBox fx:id="acctBox" mnemonicParsing="false" text="Accounting" />
+                  <CheckBox fx:id="compBox" mnemonicParsing="false" text="Computer Science" />
+                  <CheckBox fx:id="dataBox" mnemonicParsing="false" text="Data Science" />
+                  <CheckBox fx:id="elecBox" mnemonicParsing="false" text="Electrical Engineering" />
+                  <CheckBox fx:id="mathBox" mnemonicParsing="false" text="Mathematics" />
+               </children>
+            </VBox>
+            <VBox prefHeight="128.0" prefWidth="182.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      Minors:" />
+                  <CheckBox fx:id="mobyBox" mnemonicParsing="false" text="Mobile Development" />
+                  <CheckBox fx:id="musiBox" mnemonicParsing="false" text="Music" />
+                  <CheckBox fx:id="nssBox" mnemonicParsing="false" text="National Security Studies" />
+                  <CheckBox fx:id="mngBox" mnemonicParsing="false" text="Management" />
+                  <CheckBox fx:id="cybBox" mnemonicParsing="false" text="Cyber Security" />
+                  <CheckBox fx:id="chemBox" mnemonicParsing="false" text="Chemistry" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button layoutX="256.0" layoutY="382.0" mnemonicParsing="false" onAction="#addUnoficalTranscript" text="Import Unofficial Transcript" />
+      <Text layoutX="426.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This will be used for course suggestion purposes only" />
+      <Text fx:id="importPdfText" fill="#3f3f3f" layoutX="259.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14 taken courses added!" />
+   </children>
+</AnchorPane>

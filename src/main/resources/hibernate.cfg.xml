@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+   
+      <property name = "hibernate.dialect">
+         org.hibernate.dialect.MySQLDialect
+      </property>
+      
+      <property name = "hibernate.connection.driver_class">
+         com.mysql.cj.jdbc.Driver
+      </property>
+      
+      <!-- Assume test is the database name -->
+      <property name="hibernate.session.events.log">true</property>
+      <property name="hibernate.generate_statistics">true</property>
+      <property name = "hibernate.connection.url">
+         <!--Add url to google cloud server here -->
+         jdbc:mysql://34.72.234.35:3306/courses <!-- this is correct url -->
+      </property>
+      
+      <property name = "hibernate.connection.username">
+         <!--Admin username-->
+         root
+      </property>
+      <property name="hibernate.show_sql"> false </property>
+      <property name = "hibernate.connection.password">
+         <!-- Admin password-->
+         password
+      </property>
+
+      <property name="hibernate.current_session_context_class">thread</property>
+      <!-- List of XML mapping files -->
+      <mapping resource="Course.hbm.xml"/>
+      <mapping resource="Major.hbm.xml"/>
+      <mapping resource="LogEntry.hbm.xml"/>
+
+   </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "edu.gcc.comp350.amazeall.Course" table = "courses_table">
+      
+      <meta attribute = "class-description">
+         This class contains the Courses. 
+      </meta>
+      
+      <id name = "courseID" type = "string" access="field" column = "CourseID" >
+         <generator class="native"/>
+      </id>
+      <!-- This is the mapping of the course members to what is inside of the database-->
+      <property name = "courseName" column = "courseName" access="field" type = "string"/>
+      <property name = "credits" column = "Credits" access="field" type = "int"/>
+      <property name = "totalSeats" column = "TotalSeats" access="field" type = "int"/>
+      <property name = "daysMet" column = "DaysMet" access="field" type = "string"/>
+      <property name = "startTime" column = "StartTime" access="field" type = "time"/>
+      <property name = "endTime" column = "EndTime" access="field" type = "time"/>
+      <property name = "profName" column = "ProfName" access="field" type = "string"/>
+      <property name = "prerequisites" column = "Prerequisites" access="field" type = "string"/>
+      
+   </class>
+</hibernate-mapping>
