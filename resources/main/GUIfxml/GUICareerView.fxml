@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="nameText" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name of Career" textAlignment="CENTER" wrappingWidth="1000.0">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <ScrollPane layoutY="113.0" prefHeight="221.0" prefWidth="580.0" vbarPolicy="NEVER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <content>
+            <HBox fx:id="semesterBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="204.0" prefWidth="972.0" />
+         </content></ScrollPane>
+      <Button disable="true" layoutX="62.0" layoutY="353.0" mnemonicParsing="false" text="Add New Semester" visible="false" />
+      <Button disable="true" layoutX="423.0" layoutY="353.0" mnemonicParsing="false" text="Delete Semester" textFill="RED" visible="false" />
+      <Button layoutX="30.0" layoutY="25.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <Text fx:id="creditsText" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Credits: 0" textAlignment="CENTER" wrappingWidth="1000.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="emailButton" layoutX="280.0" layoutY="353.0" mnemonicParsing="false" onAction="#sendEmail" text="Send Schedule" AnchorPane.leftAnchor="280.0" />
+      <TextField fx:id="emailField" layoutX="10.0" layoutY="353.0" prefHeight="25.0" prefWidth="256.0" promptText="Enter an email here" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="353.0" />
+      <Button fx:id="downloadButton" layoutX="827.0" layoutY="365.0" mnemonicParsing="false" onAction="#downloadAction" prefHeight="25.0" prefWidth="150.0" text="Download Schedule" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="353.0" />
+      <Text fx:id="downloadText" layoutX="831.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="380.0" />
+      <Text fx:id="emailError" layoutX="39.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="385.0" />
+      <Button layoutX="686.0" layoutY="353.0" mnemonicParsing="false" onAction="#seeOverview" text="See Overview" />
+   </children>
+</AnchorPane>

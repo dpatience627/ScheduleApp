@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane layoutX="10.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d1d1d1" height="300.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+            <Pane fx:id="calendarPane" prefHeight="300.0" prefWidth="600.0" />
+         </children></StackPane>
+      <Text fx:id="semesterName" layoutX="14.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar" textAlignment="CENTER" wrappingWidth="600.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="30.0" layoutY="20.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <Text fx:id="creditsText" layoutX="8.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Credits: 0" textAlignment="CENTER" wrappingWidth="600.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="10.0" layoutY="455.0" mnemonicParsing="false" onAction="#undoAction" text="Undo Action" />
+      <Text fx:id="onlineText" layoutX="103.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Online Courses:" />
+      <ScrollPane fx:id="onlineScroll" layoutX="103.0" layoutY="478.0" prefHeight="106.0" prefWidth="497.0">
+         <content>
+            <VBox fx:id="onlineBox" prefHeight="100.0" prefWidth="490.0" />
+         </content>
+      </ScrollPane>
+      <TabPane layoutX="615.0" prefHeight="600.0" prefWidth="385.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Suggested Courses">
+             <VBox layoutX="429.0" layoutY="50.0" prefHeight="571.0" prefWidth="222.0">
+                <children>
+                   <Button fx:id="sugBack" mnemonicParsing="false" onAction="#sugTopLevel" prefWidth="385.0" text="Back to Suggestions" visible="false">
+                        <font>
+                           <Font name="System Bold Italic" size="14.0" />
+                        </font></Button>
+                     <StackPane prefHeight="438.0" prefWidth="386.0">
+                        <children>
+                         <ListView fx:id="sugView" prefHeight="438.0" prefWidth="386.0" />
+                           <ListView fx:id="sugCourseView" prefHeight="438.0" prefWidth="386.0" visible="false" />
+                        </children>
+                     </StackPane>
+                     <Text fx:id="sugText" strokeType="OUTSIDE" strokeWidth="0.0" text="Easter Egg, have three lines here! WOOOOOOOOOOOOOOOOOO! hahahahaha! RUST! I'LL REWRITE THE WHOLE THING IN RUST! WHO'S GONNA STOP ME?" visible="false" wrappingWidth="385.0" />
+                   <Button fx:id="sugAdd" disable="true" mnemonicParsing="false" onAction="#sugAddFromSug" prefHeight="43.0" prefWidth="385.0" text="~ Select a Course ~" visible="false">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font></Button>
+                </children>
+             </VBox>
+          </Tab>
+          <Tab text="Manual Search">
+               <VBox layoutX="0.0" layoutY="0.0" prefHeight="571.0" prefWidth="383.0">
+                  <children>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Code:" />
+                     <TextField fx:id="codeField" promptText="Ex: COMP350" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Name:" />
+                     <TextField fx:id="nameField" promptText="Ex: Software Engineering" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Days (MTWRF):" />
+                     <TextField fx:id="daysField" promptText="Ex: MWF" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Start Time:" />
+                     <HBox prefHeight="27.0" prefWidth="372.0">
+                        <children>
+                           <TextField fx:id="startHourField" promptText="Hour (Ex: 2)" />
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+                           <TextField fx:id="startMinuteField" promptText="Minute (Ex: 00)" />
+                           <Separator orientation="VERTICAL" prefHeight="64.0" prefWidth="45.0" visible="false" />
+                           <Button fx:id="startMerButton" mnemonicParsing="false" onAction="#switchStartMer" text="AM" />
+                        </children>
+                     </HBox>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="End Time:" />
+                     <HBox prefHeight="30.0" prefWidth="372.0">
+                        <children>
+                           <TextField fx:id="endHourField" promptText="Hour (Ex: 2)" />
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+                           <TextField fx:id="endMinuteField" promptText="Minute (Ex: 50)" />
+                           <Separator orientation="VERTICAL" prefHeight="34.0" prefWidth="45.0" visible="false" />
+                           <Button fx:id="endMerButton" mnemonicParsing="false" onAction="#switchEndMer" text="AM" />
+                        </children>
+                     </HBox>
+                     <Button mnemonicParsing="false" onAction="#doSearch" prefHeight="26.0" prefWidth="400.0" text="Search">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Button>
+                     <Separator prefHeight="5.0" prefWidth="200.0" visible="false" />
+                     <ListView fx:id="searchResultsView" prefHeight="218.0" prefWidth="401.0" />
+                     <Text fx:id="courseSearchInfoText" strokeType="OUTSIDE" strokeWidth="0.0" text="You think that's what this is about?! Who do you think polluted our last world? I did. This is about one thing and one thing only: CASH! And lots of it!" wrappingWidth="372.0" />
+                     <Button fx:id="addCourseButton" disable="true" mnemonicParsing="false" onAction="#addToSemester" prefHeight="43.0" prefWidth="400.0" text="~ Select a Course ~" textAlignment="CENTER">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

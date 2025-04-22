@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="30.0" layoutY="20.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <ScrollPane layoutX="178.0" layoutY="95.0" prefHeight="465.0" prefWidth="644.0">
+         <content>
+            <TextFlow fx:id="infoTextFlow" prefWidth="642.0" />
+         </content></ScrollPane>
+      <Text layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Overview" textAlignment="CENTER" wrappingWidth="1000.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="checkSymbol" fill="#009600" layoutX="39.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="✔" />
+      <Text fx:id="crossSymbol" fill="RED" layoutX="39.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❌" />
+      <Text layoutX="60.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taken" />
+      <Text layoutX="60.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not taken" />
+   </children>
+</AnchorPane>
